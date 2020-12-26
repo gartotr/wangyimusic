@@ -1,0 +1,8 @@
+<!--components/NavBanner/index.wxml-->
+<view class="recommend-bar">
+  <view class="recommend-content">{{titleName}}</view>
+  <view class="recommend-outer">
+    <view class="recommend-left">{{content}}</view>
+    <view class="recommend-right">查看更多</view>
+  </view>
+</view>

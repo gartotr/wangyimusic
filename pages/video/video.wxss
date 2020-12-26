@@ -1,0 +1,113 @@
+/* pages/video/video.wxss */
+/* 头部导航 */
+.topbar{
+  display: flex;
+  padding: 10rpx;
+}
+.placeholder-style {
+  text-align: center;
+  color: #d43c33;
+  font-size:28rpx;
+}
+
+.topbar .search{
+  flex-grow: 1;
+  border: 1rpx solid #ccc;
+  height:60rpx;
+  border-radius: 10rpx;
+  padding-left: 20rpx;
+  box-sizing: border-box;
+}
+
+.topbar image {
+  width: 60rpx;
+  height: 60rpx;
+  padding: 0 10rpx;
+}
+
+.video-scroll{
+  height: 110rpx;
+
+  display: flex;
+  white-space: nowrap;
+}
+.video-scroll-view{
+  margin: 0 11rpx;
+
+}
+.active{
+  border-bottom: 4rpx solid red;
+}
+.video-scroll-text{
+  height: 100rpx;
+  line-height: 100rpx;
+}
+/* ------------------------ */
+
+.videoList .common {
+  width: 100%;
+  border-radius: 10rpx;
+}
+
+.videoList .videoItem{
+  padding:3%;
+  padding-bottom:0;
+}
+
+
+.videoList{
+  padding-top:40rpx;
+}
+
+.videoList .content {
+  font-size: 26rpx;
+  height:80rpx;
+  line-height: 80rpx;
+  max-width: 500rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* footer */
+.footer {
+  border-top: 1rpx solid #eee;
+  padding: 20rpx 0;
+}
+.footer .avatar {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.footer  .nickName {
+  font-size: 26rpx;
+  vertical-align: middle;
+  margin-left: 20rpx;
+}
+
+.footer .comments_praised {
+  float: right;
+}
+.comments_praised .btn {
+  display: inline;
+  padding: 0;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.comments_praised .btn:after {
+  border: none;
+}
+
+.comments_praised .item {
+  margin-left: 50rpx;
+  position: relative;
+}
+
+.comments_praised .item .count {
+  position: absolute;
+  top: -20rpx;
+  font-size: 20rpx;
+}

@@ -1,0 +1,22 @@
+/* components/NavBanner/index.wxss */
+
+/* 推荐歌曲上bar */
+.recommend-bar{
+  margin: 24rpx 10rpx;
+}
+/* 推荐歌曲 */
+.recommend-content {
+  color: #666;
+  font-size: 26rpx;
+}
+.recommend-outer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.recommend-right {
+  font-size: 22rpx;
+  padding: 10rpx 20rpx;
+  border: 1rpx solid;
+  border-radius: 14rpx;
+}
