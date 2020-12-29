@@ -6,6 +6,13 @@ Page({
     bannerList: [],
     topList: []
   },
+
+  toRecommend(){
+    wx.navigateTo({
+      url: '/pages/recommendSong/recommendSong',
+    })
+  },
+
   onLoad() {
 
     /* 轮播图 */
@@ -39,9 +46,6 @@ Page({
         })
       })
     }
-
-
-
 
   }
 })

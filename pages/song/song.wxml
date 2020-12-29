@@ -1,0 +1,31 @@
+<!--pages/song/song.wxml-->
+<view class="songContainer {{isPlay ? 'isplaying' : ''}}">
+  <view class="name">{{name}}</view>
+  <view class="keng"></view>
+  <image class="needle" src="/static/images/song/needle.png"></image>
+  <view class="discContainer">
+    <image class="disc" src="/static/images/song/disc.png"></image>
+    <image class="bigImg" src="{{picUrl}}"></image>
+  </view>
+
+  <view class="time-outer">
+    <text class="left">{{currentTime}}</text>
+    <view class="progressBar-outer">
+      <view class="progressBar-inner" style="width:{{currentWidth}}%">
+        <view class="box"></view>
+      </view>
+
+    </view>
+    <text class="right">{{endTime}}</text>
+  </view>
+
+
+  <!-- 底部播放选项区域 -->
+  <view class="musicControl">
+    <text class="iconfont icon-iconsMusicyemianbofangmoshiShuffle"></text>
+    <text class="iconfont icon-shangyishou" id="pre" bindtap="switchType"></text>
+    <text class="iconfont {{isPlay ? 'icon-zanting':'icon-bofang'}} " bindtap="handlePlay"></text>
+    <text class="iconfont icon-next" id="next" bindtap="switchType"></text>
+    <text class="iconfont icon-iconsMusicyemianbofangmoshiPlayList"></text>
+  </view>
+</view>

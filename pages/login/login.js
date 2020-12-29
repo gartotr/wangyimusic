@@ -28,11 +28,12 @@ Page({
     // 18016650100
     ajax('/login/cellphone', 'GET', {
       phone,
-      password
+      password,
+      isLogin: true
     }).then((res) => {
       wx.setStorage({
-        key:"userInfo",
-        data:JSON.stringify(res.profile)
+        key: "userInfo",
+        data: JSON.stringify(res.profile)
       })
       wx.switchTab({
         url: '/pages/personal/personal',
@@ -65,7 +66,7 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-    
+
   },
 
   /**

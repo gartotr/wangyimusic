@@ -1,13 +1,12 @@
 {
   "pages": [
+    "pages/recommendSong/recommendSong",
+    "pages/song/song",
+
+    "pages/index/index",
     "pages/login/login",
     "pages/video/video",
-    "pages/personal/personal",
-
-
-    "pages/index/index"
-
-
+    "pages/personal/personal"
   ],
   "tabBar": {
     "color": "#333333",
@@ -39,6 +38,9 @@
     "navigationBarTitleText": "网抑云音乐",
     "navigationBarTextStyle": "white"
   },
+  "requiredBackgroundModes": [
+    "audio"
+  ],
   "style": "v2",
   "sitemapLocation": "sitemap.json"
 }

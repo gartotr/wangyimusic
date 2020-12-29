@@ -3,139 +3,42 @@
   <view class="topbar">
     <image src="/static/images/video/video.jpg"></image>
     <input class="search" type="text" placeholder="光辉岁月" placeholder-class='placeholder-style' />
-    <image src="/static/images/logo.png"></image>
+    <image src="/static/images/logo.png" bindtap="videoPlayPause"></image>
   </view>
-  <scroll-view class="video-scroll" enable-flex scroll-x>
-    <view class="video-scroll-view {{currentId == item.id?'active':''}}" wx:for="{{videoGroupList}}" wx:key='id'
-      data-id='{{item.id}}' id='{{item.id}}' bindtap="clicknScroll">
-      <text class="video-scroll-text">{{item.name}}</text>
-    </view>
-  </scroll-view>
+  <view class="video-outer">
+    <scroll-view  class="video-scroll" enable-flex scroll-x scroll-into-view='{{scrollId}}' scroll-with-animation>
+      <view class="video-scroll-view {{currentId == item.id?'active':''}}" wx:for="{{videoGroupList}}" wx:key='id'
+        data-id='{{item.id}}' id='scroll{{item.id}}'   bindtap="clicknScroll" >
+        <text class="video-scroll-text">{{item.name}}</text>
+      </view>
+    </scroll-view>
+  </view>
 
 
   <!-- videoList区域 -->
-  <scroll-view class="videoList" scroll-y>
-    <view class="videoItem">
-      <video class="common"></video>
-      <view class="content">Wiz Khalifa《See You Again》韩国演唱会</view>
+  <scroll-view class="videoList" scroll-y refresher-default-style='black'
+  refresher-enabled='true'
+  refresher-triggered='{{flag}}'
+  bindrefresherrefresh='pullDown'
+  bindscrolltolower='pullUp'
+    >
+    <view class="videoItem" wx:for="{{videoList}}" wx:key='id'>
+      <image class="common" src="{{item.coverUrl}}" bindtap="showVideo" wx:if="{{item.vid!==videoId}}" id='{{item.vid}}'></image>
+      <video class="common" src="{{item.urlInfo.url}}" bindplay='videoPlayStart' id='{{item.vid}}' wx:else></video>
+      <view class="content">{{item.title}}</view>
       <view class="footer">
-        <image class="avatar" src="/static/images/logo.png"></image>
-        <text class="nickName">硅谷云音乐</text>
+        <image class="avatar" src="{{item.creator.avatarUrl}}"></image>
+        <text class="nickName">{{item.creator.nickname}}</text>
         <view class="comments_praised">
           <text class="item">
             <text class="iconfont icon-buoumaotubiao15"></text>
-            <text class="count">18958</text>
+            <text class="count">{{item.praisedCount}}</text>
           </text>
           <text class="item">
             <text class="iconfont icon-pinglun1"></text>
-            <text class="count">790</text>
+            <text class="count">{{item.commentCount}}</text>
           </text>
-          <button class="item btn">
-            <text class="iconfont icon-gengduo"></text>
-          </button>
-        </view>
-      </view>
-    </view>
-    <view class="videoItem">
-      <video class="common"></video>
-      <view class="content">Wiz Khalifa《See You Again》韩国演唱会</view>
-      <view class="footer">
-        <image class="avatar" src="/static/images/logo.png"></image>
-        <text class="nickName">硅谷云音乐</text>
-        <view class="comments_praised">
-          <text class="item">
-            <text class="iconfont icon-buoumaotubiao15"></text>
-            <text class="count">18958</text>
-          </text>
-          <text class="item">
-            <text class="iconfont icon-pinglun1"></text>
-            <text class="count">790</text>
-          </text>
-          <button class="item btn">
-            <text class="iconfont icon-gengduo"></text>
-          </button>
-        </view>
-      </view>
-    </view>
-    <view class="videoItem">
-      <video class="common"></video>
-      <view class="content">Wiz Khalifa《See You Again》韩国演唱会</view>
-      <view class="footer">
-        <image class="avatar" src="/static/images/logo.png"></image>
-        <text class="nickName">硅谷云音乐</text>
-        <view class="comments_praised">
-          <text class="item">
-            <text class="iconfont icon-buoumaotubiao15"></text>
-            <text class="count">18958</text>
-          </text>
-          <text class="item">
-            <text class="iconfont icon-pinglun1"></text>
-            <text class="count">790</text>
-          </text>
-          <button class="item btn">
-            <text class="iconfont icon-gengduo"></text>
-          </button>
-        </view>
-      </view>
-    </view>
-    <view class="videoItem">
-      <video class="common"></video>
-      <view class="content">Wiz Khalifa《See You Again》韩国演唱会</view>
-      <view class="footer">
-        <image class="avatar" src="/static/images/logo.png"></image>
-        <text class="nickName">硅谷云音乐</text>
-        <view class="comments_praised">
-          <text class="item">
-            <text class="iconfont icon-buoumaotubiao15"></text>
-            <text class="count">18958</text>
-          </text>
-          <text class="item">
-            <text class="iconfont icon-pinglun1"></text>
-            <text class="count">790</text>
-          </text>
-          <button class="item btn">
-            <text class="iconfont icon-gengduo"></text>
-          </button>
-        </view>
-      </view>
-    </view>
-    <view class="videoItem">
-      <video class="common"></video>
-      <view class="content">Wiz Khalifa《See You Again》韩国演唱会</view>
-      <view class="footer">
-        <image class="avatar" src="/static/images/logo.png"></image>
-        <text class="nickName">硅谷云音乐</text>
-        <view class="comments_praised">
-          <text class="item">
-            <text class="iconfont icon-buoumaotubiao15"></text>
-            <text class="count">18958</text>
-          </text>
-          <text class="item">
-            <text class="iconfont icon-pinglun1"></text>
-            <text class="count">790</text>
-          </text>
-          <button class="item btn">
-            <text class="iconfont icon-gengduo"></text>
-          </button>
-        </view>
-      </view>
-    </view>
-    <view class="videoItem">
-      <video class="common"></video>
-      <view class="content">Wiz Khalifa《See You Again》韩国演唱会</view>
-      <view class="footer">
-        <image class="avatar" src="/static/images/logo.png"></image>
-        <text class="nickName">硅谷云音乐</text>
-        <view class="comments_praised">
-          <text class="item">
-            <text class="iconfont icon-buoumaotubiao15"></text>
-            <text class="count">18958</text>
-          </text>
-          <text class="item">
-            <text class="iconfont icon-pinglun1"></text>
-            <text class="count">790</text>
-          </text>
-          <button class="item btn">
+          <button class="item btn" open-type="share" data-url="{{item.coverUrl}}" data-title='{{item.title}}'>
             <text class="iconfont icon-gengduo"></text>
           </button>
         </view>

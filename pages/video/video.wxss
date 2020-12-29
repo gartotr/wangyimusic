@@ -25,14 +25,17 @@
   padding: 0 10rpx;
 }
 
+.video-outer{
+  padding: 0 20rpx;
+}
+
 .video-scroll{
   height: 110rpx;
-
   display: flex;
   white-space: nowrap;
 }
 .video-scroll-view{
-  margin: 0 11rpx;
+  margin: 0 14rpx;
 
 }
 .active{
@@ -57,6 +60,7 @@
 
 .videoList{
   padding-top:40rpx;
+  height:calc(100vh - 230rpx)
 }
 
 .videoList .content {
